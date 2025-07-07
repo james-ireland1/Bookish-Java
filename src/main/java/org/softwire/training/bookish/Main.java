@@ -1,10 +1,12 @@
 package org.softwire.training.bookish;
 
 import org.jdbi.v3.core.Jdbi;
+import org.softwire.training.bookish.models.database.Book;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class Main {
@@ -41,6 +43,12 @@ public class Main {
 
         Jdbi jdbi = Jdbi.create(connectionString);
 
+        List<Book> books = jdbi.withHandle(handle ->
+                handle.createQuery("SELECT * FROM bookish.books ORDER BY title")
+                        .mapToBean(Book.class)
+                        .list());
+
+        books.forEach(Book::printBook);
 
 
     }
