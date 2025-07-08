@@ -34,29 +34,37 @@ INSERT INTO books (title, author, isbn, edition, publisher) VALUES
                                                                 ('The Midnight Library', 'Matt Haig', '9780525559474', '2nd', 'Canongate'),
                                                                 ('The House in the Cerulean Sea', 'TJ Klune', '9781250217318', '1st', 'Tor Books');
 
-DELIMITER $$
-
-CREATE PROCEDURE InsertRandomBookIDs()
-BEGIN
-    DECLARE i INT DEFAULT 1;
-    DECLARE j INT;
-    DECLARE num_rows INT;
-
-    WHILE i <= 30 DO
-            SET num_rows = FLOOR(RAND() * 11);
-            SET j = 1;
-            WHILE j <= num_rows DO
-                    INSERT INTO copies (bookID, status) VALUES (i, 'AVAILABLE');
-                    SET j = j + 1;
-                END WHILE;
-            SET i = i + 1;
-        END WHILE;
-END $$
-
-DELIMITER ;
-
--- Call the procedure
-CALL InsertRandomBookIDs();
+INSERT INTO copies (bookID, status) VALUES
+                                        (1, 'AVAILABLE'), (1, 'AVAILABLE'),
+                                        (2, 'AVAILABLE'), (2, 'AVAILABLE'),
+                                        (3, 'AVAILABLE'), (3, 'AVAILABLE'),
+                                        (4, 'AVAILABLE'), (4, 'AVAILABLE'),
+                                        (5, 'AVAILABLE'), (5, 'AVAILABLE'),
+                                        (6, 'AVAILABLE'), (6, 'AVAILABLE'),
+                                        (7, 'AVAILABLE'), (7, 'AVAILABLE'),
+                                        (8, 'AVAILABLE'), (8, 'AVAILABLE'),
+                                        (9, 'AVAILABLE'), (9, 'AVAILABLE'),
+                                        (10, 'AVAILABLE'), (10, 'AVAILABLE'),
+                                        (11, 'AVAILABLE'), (11, 'AVAILABLE'),
+                                        (12, 'AVAILABLE'), (12, 'AVAILABLE'),
+                                        (13, 'AVAILABLE'), (13, 'AVAILABLE'),
+                                        (14, 'AVAILABLE'), (14, 'AVAILABLE'),
+                                        (15, 'AVAILABLE'), (15, 'AVAILABLE'),
+                                        (16, 'AVAILABLE'), (16, 'AVAILABLE'),
+                                        (17, 'AVAILABLE'), (17, 'AVAILABLE'),
+                                        (18, 'AVAILABLE'), (18, 'AVAILABLE'),
+                                        (19, 'AVAILABLE'), (19, 'AVAILABLE'),
+                                        (20, 'AVAILABLE'), (20, 'AVAILABLE'),
+                                        (21, 'AVAILABLE'), (21, 'AVAILABLE'),
+                                        (22, 'AVAILABLE'), (22, 'AVAILABLE'),
+                                        (23, 'AVAILABLE'), (23, 'AVAILABLE'),
+                                        (24, 'AVAILABLE'), (24, 'AVAILABLE'),
+                                        (25, 'AVAILABLE'), (25, 'AVAILABLE'),
+                                        (26, 'AVAILABLE'), (26, 'AVAILABLE'),
+                                        (27, 'AVAILABLE'), (27, 'AVAILABLE'),
+                                        (28, 'AVAILABLE'), (28, 'AVAILABLE'),
+                                        (29, 'AVAILABLE'), (29, 'AVAILABLE'),
+                                        (30, 'AVAILABLE'), (30, 'AVAILABLE');
 
 INSERT INTO members (Name, RegistrationDate) VALUES
                                                ('Olivia Mitchell', '2025-06-12'),

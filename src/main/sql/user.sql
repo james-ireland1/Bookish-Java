@@ -1,0 +1,2 @@
+CREATE USER 'bookish'@'localhost' IDENTIFIED BY 'bookish';
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'bookish'@'localhost' WITH GRANT OPTION;
