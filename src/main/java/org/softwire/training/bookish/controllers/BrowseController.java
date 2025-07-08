@@ -28,15 +28,15 @@ public class BrowseController {
     @RequestMapping("")
     ModelAndView browse(@RequestParam(required = false, defaultValue = "title") String sort) {
 
-        List<String> sortOptions =  Arrays.asList("title","author","isbn","edition","publisher");
+        /*List<String> sortOptions =  Arrays.asList("title","author","isbn","edition","publisher");
 
         if (!sortOptions.contains(sort)) {sort = "title";}
 
         List<Book> allBooks = libraryService.getAllBooks(sort);
 
-        allBooks.forEach(book -> book.setCopies(libraryService.getCopies(book.getBookID())));
+        allBooks.forEach(book -> book.setCopies(libraryService.getCopies(book.getBookID())));*/
 
-        //List<Book> allBooks = libraryService.getAllCopies();
+        List<Book> allBooks = libraryService.getAllCopies();
 
         BrowsePageModel browsePageModel = new BrowsePageModel();
         browsePageModel.setBooks(allBooks);

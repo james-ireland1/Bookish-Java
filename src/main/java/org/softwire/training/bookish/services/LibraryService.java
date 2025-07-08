@@ -31,24 +31,25 @@ public class LibraryService extends DatabaseService {
                         .list());
         Map<Integer, Book> bookMap = new HashMap<>();
         for (Map<String,Object> row : rows) {
-            int bookID = (int) row.get("BookID");
+            int bookID = (int) row.get("bookid");
             Book book = bookMap.computeIfAbsent(bookID, id -> {
                 Book newBook = new Book();
                 newBook.setBookID(bookID);
-                newBook.setTitle((String) row.get("Title"));
-                newBook.setAuthor((String) row.get("Author"));
-                newBook.setISBN((String) row.get("ISBN"));
-                newBook.setEdition((String) row.get("Edition"));
-                newBook.setPublisher((String) row.get("Publisher"));
+                newBook.setTitle((String) row.get("title"));
+                newBook.setAuthor((String) row.get("author"));
+                newBook.setISBN((String) row.get("isbn"));
+                newBook.setEdition((String) row.get("edition"));
+                newBook.setPublisher((String) row.get("publisher"));
+                newBook.setCopies(new ArrayList<>());
                 return newBook;
             });
 
             Copy copy = new Copy();
-            copy.setCopyID((int) row.get("CopyID"));
+            copy.setCopyID((int) row.get("copyid"));
             copy.setBookID(bookID);
-            copy.setStatus((String) row.get("Status"));
-            copy.setMemberID((int) row.get("MemberID"));
-            copy.setDueBack((Date) row.get("DueBack"));
+            copy.setStatus((String) row.get("status"));
+            copy.setMemberID((Integer) row.get("memberid"));
+            copy.setDueBack((Date) row.get("dueback"));
 
             book.getCopies().add(copy);
         }

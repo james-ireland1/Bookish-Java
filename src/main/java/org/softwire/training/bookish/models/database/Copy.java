@@ -6,7 +6,7 @@ public class Copy {
     private int copyID;
     private int bookID;
     private String status;
-    private int memberID;
+    private Integer memberID;
     private Date dueBack;
 
     public int getCopyID() {return copyID;}
@@ -18,8 +18,8 @@ public class Copy {
     public String getStatus() {return status;}
     public void setStatus(String status) {this.status = status;}
 
-    public int getMemberID() {return memberID;}
-    public void setMemberID(int memberID) {this.memberID = memberID;}
+    public Integer getMemberID() {return memberID;}
+    public void setMemberID(Integer memberID) {this.memberID = memberID;}
 
     public Date getDueBack() {return dueBack;}
     public void setDueBack(Date dueBack) {this.dueBack = dueBack;}
