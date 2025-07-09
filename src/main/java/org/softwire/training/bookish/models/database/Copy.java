@@ -8,6 +8,7 @@ public class Copy {
     private String status;
     private Integer memberID;
     private Date dueBack;
+    private String memberName;
 
     public int getCopyID() {return copyID;}
     public void setCopyID(int copyID) {this.copyID = copyID;}
@@ -23,4 +24,7 @@ public class Copy {
 
     public Date getDueBack() {return dueBack;}
     public void setDueBack(Date dueBack) {this.dueBack = dueBack;}
+
+    public String getMemberName() {return memberName;}
+    public void setMemberName(String memberName) {this.memberName = memberName;}
 }

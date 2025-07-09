@@ -26,7 +26,7 @@ public class LibraryService extends DatabaseService {
 
     public List<Book> getAllCopies() {
         List<Map<String,Object>> rows = jdbi.withHandle(handle ->
-                handle.createQuery("SELECT * FROM bookish.books b JOIN bookish.copies c ON b.BookID = c.BookID")
+                handle.createQuery("SELECT * FROM bookish.books b JOIN bookish.copies c ON b.BookID = c.BookID LEFT JOIN bookish.members m ON c.MemberID = m.MemberID")
                         .mapToMap()
                         .list());
         Map<Integer, Book> bookMap = new HashMap<>();
@@ -50,6 +50,7 @@ public class LibraryService extends DatabaseService {
             copy.setStatus((String) row.get("status"));
             copy.setMemberID((Integer) row.get("memberid"));
             copy.setDueBack((Date) row.get("dueback"));
+            copy.setMemberName((String) row.get("name"));
 
             book.getCopies().add(copy);
         }
