@@ -6,22 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    @ColumnName("BookID")
     private int bookID;
-
-    @ColumnName("Title")
     private String title;
-
-    @ColumnName("author")
     private String author;
-
-    @ColumnName("ISBN")
     private String ISBN;
-
-    @ColumnName("Edition")
     private String edition;
-
-    @ColumnName("Publisher")
     private String publisher;
 
     private List<Copy> copies;

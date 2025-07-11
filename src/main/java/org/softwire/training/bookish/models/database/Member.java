@@ -6,19 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 public class Member {
-    @ColumnName("MemberID")
     private int memberID;
-
-    @ColumnName("Name")
     private String name;
-
-    @ColumnName("RegistrationDate")
     private Date registrationDate;
-
-    @ColumnName("Status")
     private String status;
-
-    private List<Book> books;
+    private List<CopyDTO> copies;
 
     public Member() {};
 
@@ -48,5 +40,13 @@ public class Member {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<CopyDTO> getCopies() {
+        return copies;
+    }
+
+    public void setCopies(List<CopyDTO> copies) {
+        this.copies = copies;
     }
 }
