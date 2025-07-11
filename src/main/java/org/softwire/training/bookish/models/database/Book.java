@@ -28,26 +28,54 @@ public class Book {
 
     public Book() {};
 
-    public void setBookID(int BookID) {this.bookID = BookID;}
-    public int getBookID() {return this.bookID;}
+    public void setBookID(int BookID) {
+        this.bookID = BookID;
+    }
+    public int getBookID() {
+        return this.bookID;
+    }
 
-    public void setTitle(String Title) {this.title = Title;}
-    public String getTitle() {return this.title;}
+    public void setTitle(String Title) {
+        this.title = Title;
+    }
+    public String getTitle() {
+        return this.title;
+    }
 
-    public void setAuthor(String Author) {this.author = Author;}
-    public String getAuthor() {return this.author;}
+    public void setAuthor(String Author) {
+        this.author = Author;
+    }
+    public String getAuthor() {
+        return this.author;
+    }
 
-    public void setISBN(String ISBN) {this.ISBN = ISBN;}
-    public String getISBN() {return this.ISBN;}
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+    public String getISBN() {
+        return this.ISBN;
+    }
 
-    public void setEdition(String Edition) {this.edition = Edition;}
-    public String getEdition() {return this.edition;}
+    public void setEdition(String Edition) {
+        this.edition = Edition;
+    }
+    public String getEdition() {
+        return this.edition;
+    }
 
-    public void setPublisher(String Publisher) {this.publisher = Publisher;}
-    public String getPublisher() {return this.publisher;}
+    public void setPublisher(String Publisher) {
+        this.publisher = Publisher;
+    }
+    public String getPublisher() {
+        return this.publisher;
+    }
 
-    public void setCopies(List<Copy> copies) {this.copies = copies;}
-    public List<Copy> getCopies() {return this.copies;}
+    public void setCopies(List<Copy> copies) {
+        this.copies = copies;
+    }
+    public List<Copy> getCopies() {
+        return this.copies;
+    }
 
     public void printBook() {
         System.out.println(this.bookID + ": "
